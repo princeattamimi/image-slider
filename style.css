@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: url(images/dot-grid.png);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider{
+    width: 800px;
+    max-width: 80%;
+    height: 500px;
+    overflow: hidden;
+    border: 5px solid rgb(255, 0, 255);
+    border-radius: 10px;
+    position: relative;
+}
+
+.slides{
+    width: 500%;
+    height: 500px;
+    display: flex;
+}
+
+.slides input{
+    display: none;
+}
+
+.slide{
+    width: 20%;
+    height: 500px;
+    transition: 1.5s;
+}
+.slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.manual-navigation{
+    width: 800px;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: -50px;    
+    /* position: absolute; */
+}
+.manual-btn{
+    padding: 5px;
+    border: 3px solid rgb(255, 0, 255);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .5s;
+    z-index: 2;
+}
+.manual-btn:not(:last-child){
+    margin-right: 40px;
+}
+.manual-btn:hover{
+    background-color: rgb(255, 0, 255);
+}
+
+#radio1:checked ~ .slide.first{
+    margin-left: 0;
+}
+
+#radio2:checked ~ .slide.first{
+    margin-left: -20%;
+}
+
+#radio3:checked ~ .slide.first{
+    margin-left: -40%;
+}
+
+#radio4:checked ~ .slide.first{
+    margin-left: -60%;
+}
+
+
+.auto-navigation{
+    width: 800px;
+    max-width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 450px;
+
+}
+.auto-navigation div{
+    padding: 5px;
+    border: 3px solid rgb(255, 0, 255);
+    border-radius: 10px;
+    background-color: transparent;
+    transition: .5s;
+}
+
+.auto-btn:not(:last-child){
+    margin-right: 40px;
+}
+
+#radio1:checked ~ .auto-navigation .auto-btn1{
+    background-color: rgb(255, 0, 255);
+}
+
+#radio2:checked ~ .auto-navigation .auto-btn2{
+    background-color: rgb(255, 0, 255);
+}
+
+#radio3:checked ~ .auto-navigation .auto-btn3{
+    background-color: rgb(255, 0, 255);
+}
+
+#radio4:checked ~ .auto-navigation .auto-btn4{
+    background-color: rgb(255, 0, 255);
+}
